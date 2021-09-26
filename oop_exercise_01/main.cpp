@@ -71,6 +71,12 @@ void help(){
     std::cout << "mul num1 num2 mod" << std::endl;
     std::cout << "div num1 num2 mod" << std::endl;
     std::cout << "pow num1 num2 mod" << std::endl;
+    std::cout << "< num1 num2 mod" << std::endl;
+    std::cout << "> num1 num2 mod" << std::endl;
+    std::cout << "== num1 num2 mod" << std::endl;
+    std::cout << "!= num1 num2 mod" << std::endl;
+    std::cout << ">= num1 num2 mod" << std::endl;
+    std::cout << "<= num1 num2 mod" << std::endl;
     std::cout << "exit to quit" << std::endl;
     std::cout << "help to get help" << std::endl;
 }
@@ -88,7 +94,7 @@ int main() {
             break;
         }
             // all available commands
-        else if(cmd != "plus" && cmd != "minus" && cmd != "mul" && cmd != "div" && cmd != "pow" || cmd == "help"){
+        else if(cmd != "plus" && cmd != "minus" && cmd != "mul" && cmd != "div" && cmd != "pow" && cmd != "<" && cmd != ">" && cmd != "==" && cmd != "!=" && cmd != "<=" && cmd != ">=" || cmd == "help"){
             help();
             continue;
         }
@@ -102,20 +108,42 @@ int main() {
         // given operations
         if(cmd == "plus"){
             n3 = n1 + n2;
+            std::cout << n3 << std::endl;
         }
         else if(cmd == "minus"){
             n3 = n1 - n2;
+            std::cout << n3 << std::endl;
         }
         else if(cmd == "mul"){
             n3 = n1 * n2;
+            std::cout << n3 << std::endl;
         }
         else if(cmd == "div"){
             n3 = n1 / n2;
+            std::cout << n3 << std::endl;
         } else if(cmd == "pow"){
             n3 = Modulo::pow(n1, n2);
+            std::cout << n3 << std::endl;
+        }else if(cmd == "<"){
+            bool k = n1 < n2;
+            std::cout << k << std::endl;
+        }else if(cmd == ">"){
+            bool k = n1 > n2;
+            std::cout << k << std::endl;
+        }else if(cmd == "<="){
+            bool k = n1 <= n2;
+            std::cout << k << std::endl;
+        }else if(cmd == ">="){
+            bool k = n1 >= n2;
+            std::cout << k << std::endl;
+        }else if(cmd == "=="){
+            bool k = n1 == n2;
+            std::cout << k << std::endl;
+        }else if(cmd == "!="){
+            bool k = n1 != n2;
+            std::cout << k << std::endl;
         }
-        // prints result
-        std::cout << n3 << std::endl;
+
     }
     return 0;
 }
